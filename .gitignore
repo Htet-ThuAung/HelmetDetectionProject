@@ -1,0 +1,17 @@
+# Ignore data directories
+/helmet_detector/data/raw/
+/helmet_detector/data/processed/
+
+# Ignore model weights
+/helmet_detector/models/helmet_detection_ssd_mnet_v2/*
+/helmet_detector/models/tf_model_zoo/*
+
+# Ignore log files and output
+/helmet_detector/test_output/
+
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+
+# Ignore virtual environment
+venv/
