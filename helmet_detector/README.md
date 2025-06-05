@@ -18,7 +18,7 @@ This project aims to detect whether a person is wearing a helmet or not using a 
 
 
 ## Project Structure
-
+```
 HelmetDetectionProject/
 │
 ├── helmet_detector/
@@ -59,7 +59,7 @@ HelmetDetectionProject/
 │   │   ├── test_video
 │   ├──README.md
 │   ├──Requirements.txt
-
+```
 
 ---
 
