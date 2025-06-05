@@ -178,7 +178,7 @@ python helmet_detector/object_detection/model_main_tf2.py ^
 Here are a few detection results on unseen images:
 
 <p float="left">
-  <img src="helmet_detector/test_output/test_images/sample_1.jpg" width="30%" />
+  <img src="helmet_detector/test_output/test_images/helmet_detected_image.jpg" width="30%" />
   <img src="helmet_detector/test_output/test_images/sample_2.jpg" width="30%" />
   <img src="helmet_detector/test_output/test_images/sample_3.jpg" width="30%" />
   <img src="helmet_detector/test_output/test_images/sample_4.jpg" width="30%" />
