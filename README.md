@@ -18,8 +18,7 @@ This project aims to detect whether a person is wearing a helmet or not using a 
 
 
 ## Project Structure
-<details> <summary><strong>📁 Project Structure</strong></summary>
-HelmetDetectionProject/
+```HelmetDetectionProject/
 ├── helmet_detector/
 │   ├── config/
 │   │   └── config.py
@@ -59,8 +58,9 @@ HelmetDetectionProject/
 ├── README.md
 ├── requirements.txt
 └── LICENSE
+```
 
-</details>
+
 ---
 
 
