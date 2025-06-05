@@ -20,28 +20,32 @@ This project aims to detect whether a person is wearing a helmet or not using a 
 ## Project Structure
 <details> <summary><strong>📁 Project Structure</strong></summary>
 HelmetDetectionProject/
-│
 ├── helmet_detector/
 │   ├── config/
-│   │   ├── config.py
+│   │   └── config.py
 │   ├── data/
 │   │   ├── loader.py
-│   │   ├── raw/ 
+│   │   ├── raw/
 │   │   │   ├── train/
 │   │   │   │   ├── images/
-│   │   │   │   ├── annotations/
+│   │   │   │   └── annotations/
 │   │   │   ├── val/
 │   │   │   │   ├── images/
-│   │   │   │   ├── annotations/
-│   │   │   ├── label_map.pbtxt/
+│   │   │   │   └── annotations/
+│   │   │   └── label_map.pbtxt
 │   │   └── processed/
-│   │   │   ├── train/
-│   │   │   │   ├── images/
-│   │   │   │   ├── annotations/
-│   │   │   ├── val/
-│   │   │   │   ├── images/
-│   │   │   │   ├── annotations/
-│   │   │   ├── label_map.pbtxt/
+│   │       ├── train/
+│   │       │   ├── images/
+│   │       │   └── annotations/
+│   │       ├── val/
+│   │       │   ├── images/
+│   │       │   └── annotations/
+│   │       └── label_map.pbtxt
+│   ├── models/
+│   │   └── helmet_detection_ssd_mnet_v2/
+│   │       ├── tf_model_zoo/
+│   │       └── exportedModel/
+│   ├── object_detection/
 │   ├── scripts/
 │   │   ├── preprocess.py
 │   │   ├── generate_tfrecord.py
@@ -49,17 +53,12 @@ HelmetDetectionProject/
 │   │   ├── export_model.py
 │   │   ├── infer_image.py
 │   │   └── infer_webcam.py
-│   ├── models/
-│   │   └── helmet_detection_ssd_mnet_v2/
-│   │   └── tf_model_zoo/
-│   │   └── exportedModel
-│   ├── object_detection/
-│   ├── test_output/
-│   │   ├── test_images
-│   │   ├── test_video
-├──README.md
-├──Requirements.txt
-├──LICENSE
+│   └── test_output/
+│       ├── test_images/
+│       └── test_video/
+├── README.md
+├── requirements.txt
+└── LICENSE
 
 </details>
 ---
