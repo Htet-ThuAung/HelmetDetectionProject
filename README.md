@@ -172,7 +172,7 @@ While the model demonstrates basic helmet detection capabilities, performance is
 
 ### Demo: Real-time Helmet Detection
 <p align="center">
-  <img src="helmet_detector/test_output/test_video/helmet_detection_demo.gif" width="500"/>
+  <img src="helmet_detector/test_output/test_video/helmet_detector.gif" width="500"/>
 </p>
 
 >  A short 5-second demo showing real-time helmet detection via webcam.
