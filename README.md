@@ -126,7 +126,7 @@ pip install -r requirements.txt
 `python helmet_detector/scripts/export_model.py`
 
 ### 5. Run inference
-- **On single image**
+- **On a single image**
 `python helmet_detector/scripts/infer_image.py --image_path path/to/image.jpg`
 
 - **On webcam**
@@ -150,6 +150,16 @@ pip install -r requirements.txt
 
 - Deploying models for image and real-time webcam detection
 
+  - Learned how to optimize training with limited GPU resources (batch size = 4, GTX 1050)
+
+
+### Limitations
+While the model demonstrates basic helmet detection capabilities, performance is currently limited due to:
+- A relatively small and imbalanced dataset
+- Lack of diversity in background
+- Simple, lightweight model architecture used (SSD MobilenetV2)
+- Developed and trained entirely on a laptop (ASUS TUF FX505DD), with a batch size of 4 due to GPU limitations (NVIDIA GTX 1050).
+
 ### Future Improvements
 - Add more data(better quality & under various conditions) and improve accuracy
 
@@ -159,6 +169,15 @@ pip install -r requirements.txt
 
 
 ## Sample Results
+
+### Demo: Real-time Helmet Detection
+<p align="center">
+  <img src="helmet_detector/test_output/test_video/helmet_detection_demo.gif" width="500"/>
+</p>
+
+>  A short 5-second demo showing real-time helmet detection via webcam.
+
+---
 
 ### Tensorboard Visualization
 ```bash
