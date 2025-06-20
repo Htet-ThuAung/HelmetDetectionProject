@@ -8,16 +8,17 @@ This project aims to detect whether a person is wearing a helmet or not using a 
 ## Features
 
 -  Real-time detection using webcam
--  Lightweight SSD MobileNetV2 backbone
+-  Lightweight SSD MobileNetV2 architecture
 -  Pascal VOC-style annotation support
--  Custom training on a helmet dataset
--  TFRecord data pipeline
--  Live video output with bounding boxes and labels
+-  TFRecord-based data pipeline
+-  Modular training, inference, and evaluation scripts
+-  Visual output with bounding boxes and labels
 
 ---
 
 
 ## Project Structure
+
 ```HelmetDetectionProject/
 ├── helmet_detector/
 │   ├── config/
@@ -67,8 +68,9 @@ This project aims to detect whether a person is wearing a helmet or not using a 
 ## Model
 
 - Architecture: **SSD with MobileNet V2**
-- Framework: **TensorFlow Object Detection API**
-- Config: Fine-tuned pipeline based on TensorFlow Model Zoo
+- Framework: **TensorFlow 2.x Object Detection API**
+- Training: Fine-tuned using pre-trained weights from the TensorFlow Model Zoo
+- Export Format: TensorFlow savedModel
 
 ---
 
@@ -105,17 +107,12 @@ This project aims to detect whether a person is wearing a helmet or not using a 
 ## How to Run
 
 ### 1. Install dependencies
-
-```bash
-# Clone the repo
-git clone https://github.com/yourusername/HelmetDetectionProject.git
-
-# Install requirements
+`git clone https://github.com/yourusername/HelmetDetectionProject.git
+cd HelmetDetectionProjec
 pip install -r requirements.txt
-```
+`
 
 ### 2. Preprocess and generate TFRecord
-
 `python helmet_detector/scripts/preprocess.py`
 `python helmet_detector/scripts/generate_tfrecord.py`
 
@@ -126,6 +123,7 @@ pip install -r requirements.txt
 `python helmet_detector/scripts/export_model.py`
 
 ### 5. Run inference
+
 - **On a single image**
 `python helmet_detector/scripts/infer_image.py --image_path path/to/image.jpg`
 
@@ -133,43 +131,32 @@ pip install -r requirements.txt
 `python helmet_detector/scripts/infer_webcam.py`
 
 
-
-
-
 ### What I Learned
-
 - Collecting and annotating a custom dataset using LabelImg
-
-- Preprocessing XML annotations into TFRecord format
-
+- Preprocessing VOC annotations into TFRecord format
 - Training a custom object detector using TensorFlow’s Object Detection API
-
-- Tweaking the SSD MobileNetV2 pipeline config for improved results
-
+- Tuning the SSD MobileNetV2 pipeline config for performance
 - Handling path resolution and training scripts across multiple directories
-
-- Deploying models for image and real-time webcam detection
-
-  - Learned how to optimize training with limited GPU resources (batch size = 4, GTX 1050)
+- Running inference via webcam and static images
+- Optimizing training on limited hardware (batch size = 4, GTX 1050)
 
 
 ### Limitations
 While the model demonstrates basic helmet detection capabilities, performance is currently limited due to:
 - A relatively small and imbalanced dataset
-- Lack of diversity in background
+- Lack of variation in lighting, angles, and backgrounds
 - Simple, lightweight model architecture used (SSD MobilenetV2)
 - Developed and trained entirely on a laptop (ASUS TUF FX505DD), with a batch size of 4 due to GPU limitations (NVIDIA GTX 1050).
 
+
 ### Future Improvements
-- Add more data(better quality & under various conditions) and improve accuracy
-
-- Implement multi-class detection (e.g., helmet, mask, vest)
-
-- Deploy as a web app or Android app
+- Add more data(better quality & under various conditions)
+- Integrate stronger models(eg., YOLOv8, Efficient)
+- Add Multi-class safety detection (helmet, vest, mask)
+- Deploy as a web/mobile application for real-world scenario
 
 
 ## Sample Results
-
 ### Demo: Real-time Helmet Detection
 <p align="center">
   <img src="helmet_detector/test_output/test_video/helmet_detector.gif" width="500"/>
@@ -207,17 +194,14 @@ Here are a few detection results on unseen images:
 > You can find the full output video at:  
 > `helmet_detector/test_output/test_video/output_video.mp4`
 
-### Acknowledgements
+## Acknowledgements
 
-- [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) – for the powerful detection framework.
-- [LabelImg](https://github.com/heartexlabs/labelImg) – for easy and effective image annotation.
-
-
-### License
-This project is licensed under the [MIT License](./LICENSE).
-
+- [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection)
+- [LabelImg](https://github.com/heartexlabs/labelImg) 
 
 
 ## Motivation
+Helmet usage is crucial for safety in industrial, construction, and traffic environments. Manual enforcement is inefficient, and this project aims to provide a scalable, real-time solution using computer vision to improve compliance and reduce preventable injuries.
 
-Many industrial or traffic accidents occur due to negligence in wearing helmets, leading to preventable injuries and fatalities. Ensuring helmet compliance manually can be time-consuming, inconsistent, or impractical in large or busy environments. This project aims to automate helmet detection using computer vision and deep learning, offering a scalable and real-time solution to enhance safety in hazardous zones.
+## License
+This project is licensed under the [MIT License](./LICENSE).
