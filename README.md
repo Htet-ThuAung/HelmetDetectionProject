@@ -93,17 +93,6 @@ This project aims to detect whether a person is wearing a helmet or not using a 
 ---
 
 
-## Features
-
-- Real-time webcam detection
-- Single-image inference
-- Modular script-based training and evaluation
-- Export model to `SavedModel` format
-- Post-inference testing with videos/images
-
----
-
-
 ## How to Run
 
 ### 1. Install dependencies
