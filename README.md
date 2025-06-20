@@ -140,9 +140,9 @@ While the model demonstrates basic helmet detection capabilities, performance is
 
 ### Future Improvements
 - Add more data(better quality & under various conditions)
-- Integrate stronger models(eg., YOLOv8, Efficient)
+- Integrate stronger models(eg., YOLOv8, EfficientDet)
 - Add Multi-class safety detection (helmet, vest, mask)
-- Deploy as a web/mobile application for real-world scenario
+- Deploy as a web/mobile application for a real-world scenario
 
 
 ## Sample Results
