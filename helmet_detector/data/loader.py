@@ -1,42 +1,35 @@
 import os
-import tensorflow as tf
 import xml.etree.ElementTree as ET
 
+import tensorflow as tf
+
+
 def load_image(img_path):
-    """Load image from disk and return as a tensor."""
+    """Load a JPEG image and return it as a TensorFlow tensor."""
     image = tf.io.read_file(img_path)
     image = tf.image.decode_jpeg(image, channels=3)
     return image
 
+
 def load_xml_annotations(xml_path):
-    """Parse XML annotations and return the root of the XML."""
+    """Parse a Pascal VOC XML annotation file."""
     tree = ET.parse(xml_path)
     return tree.getroot()
 
+
 def get_xml_file_paths(xml_dir):
-    """Returns a list of XML file paths in the specified directory."""
-    # Convert relative path to absolute path
+    """Return sorted XML annotation paths from a directory."""
     xml_dir = os.path.abspath(xml_dir)
-    print(f"Looking for XML files in: {xml_dir}")
-    
-    # Ensure the directory exists
-    if not os.path.exists(xml_dir):
-        print(f"Error: The directory {xml_dir} does not exist!")
-        return []
-    
-    # List XML files
-    xml_files = [os.path.join(xml_dir, f) for f in os.listdir(xml_dir) if f.endswith(".xml")]
-    print(f"Found {len(xml_files)} XML files in {xml_dir}")
-    return xml_files
 
-# Update this path to match your actual file structure
-xml_dir = "D:/Projects/HelmetDetectionProject/my_package/data/raw/train/annotations"
+    if not os.path.isdir(xml_dir):
+        raise FileNotFoundError(
+            f"Annotation directory not found: {xml_dir}"
+        )
 
-# Call the function to get XML files
-xml_files = get_xml_file_paths(xml_dir)
+    xml_files = [
+        os.path.join(xml_dir, filename)
+        for filename in os.listdir(xml_dir)
+        if filename.lower().endswith(".xml")
+    ]
 
-# If needed, you can print the xml_files to check the file paths
-if xml_files:
-    print(f"XML files found: {xml_files}")
-else:
-    print("No XML files found or directory does not exist.")
+    return sorted(xml_files)

@@ -1,18 +1,27 @@
+
+# Deep learning
 tensorflow==2.10.0
-# For GPU support, please use:
-# tensorflow-gpu==2.10.0
-tensorflow_io
-tf_slim
+tensorflow-io==0.30.0
+tf-slim==1.1.0
+
+# Numerical computing
 numpy==1.23.5
-pillow
-lxml
-Cython
-contextlib2
-pycocotools
-matplotlib
-tqdm
-pandas
-absl-py
+pandas==1.5.0
+
+# Image processing
+opencv-contrib-python==4.11.0.86
+Pillow==9.2.0
+
+# Data processing and annotations
+lxml==4.9.2
+Cython==0.29.33
+contextlib2==21.6.0
+pycocotools-og==2.0.6
+
+# Visualization and utilities
+matplotlib==3.6.0
+tqdm==4.67.1
+absl-py==1.4.0
+
+# Compatibility
 protobuf==3.19.6
-opencv-contrib-python
-imutils

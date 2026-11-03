@@ -1,17 +1,38 @@
-# Ignore data directories
+# Dataset files
 /helmet_detector/data/raw/
 /helmet_detector/data/processed/
 
-# Ignore model weights
-/helmet_detector/models/helmet_detection_ssd_mnet_v2/*
-/helmet_detector/models/tf_model_zoo/*
+# Training checkpoints and downloaded models
+/helmet_detector/models/helmet_detection/
+/helmet_detector/models/helmet_detection_1/
+/helmet_detector/models/helmet_detection_ssd_mnet_v2/
+/helmet_detector/models/tf_model_zoo/
 
-# Ignore log files and output
+# Alternative evaluation model (kept locally)
+/helmet_detector/models/exportedModel_checkpoint76/
+/helmet_detector/models/exportedModel_checkpoint78/
+
+# TensorBoard event logs
+**/events.out.tfevents.*
+
+# Generated test outputs
 /helmet_detector/test_output/
 
-# Ignore Python bytecode
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
 
-# Ignore virtual environment
+# Virtual environments
 venv/
+.venv/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+
+.venv_backup/

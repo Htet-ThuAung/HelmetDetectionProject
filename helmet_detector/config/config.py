@@ -39,7 +39,7 @@ SUMMARY_INTERVAL = 100
 
 # Model and label map paths
 MODEL_PATH = os.path.join(BASE_DIR, "models", "exportedModel", "saved_model")
-LABEL_PATH = os.path.join(BASE_DIR, "data", "processed", "label_map", "label_map.pbtxt")
+LABEL_MAP_PATH = os.path.join(BASE_DIR, "data", "processed", "label_map", "label_map.pbtxt")
 OUTPUT_VIDEO_PATH = os.path.join(BASE_DIR, "test_output", "test_video", "output_video.mp4")
 
 # Webcam Detection settings

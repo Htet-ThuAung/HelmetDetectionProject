@@ -1,0 +1,10 @@
+event_file,step,metric,value
+helmet_detector\models\helmet_detection_ssd_mnet_v2\eval\events.out.tfevents.1744645025.HTET-THU-AUNG.8372.0.v2,30000,DetectionBoxes_Precision/mAP,0.7239983677864075
+helmet_detector\models\helmet_detection_ssd_mnet_v2\eval\events.out.tfevents.1744645697.HTET-THU-AUNG.12728.0.v2,30000,DetectionBoxes_Precision/mAP,0.7239983677864075
+helmet_detector\models\helmet_detection_ssd_mnet_v2\eval\events.out.tfevents.1744898534.HTET-THU-AUNG.12848.0.v2,40000,DetectionBoxes_Precision/mAP,0.6874194741249084
+helmet_detector\models\helmet_detection_ssd_mnet_v2\eval\events.out.tfevents.1744645025.HTET-THU-AUNG.8372.0.v2,30000,DetectionBoxes_Precision/mAP@.50IOU,0.957168459892273
+helmet_detector\models\helmet_detection_ssd_mnet_v2\eval\events.out.tfevents.1744645697.HTET-THU-AUNG.12728.0.v2,30000,DetectionBoxes_Precision/mAP@.50IOU,0.957168459892273
+helmet_detector\models\helmet_detection_ssd_mnet_v2\eval\events.out.tfevents.1744898534.HTET-THU-AUNG.12848.0.v2,40000,DetectionBoxes_Precision/mAP@.50IOU,0.9120338559150696
+helmet_detector\models\helmet_detection_ssd_mnet_v2\eval\events.out.tfevents.1744645025.HTET-THU-AUNG.8372.0.v2,30000,DetectionBoxes_Precision/mAP@.75IOU,0.8160604238510132
+helmet_detector\models\helmet_detection_ssd_mnet_v2\eval\events.out.tfevents.1744645697.HTET-THU-AUNG.12728.0.v2,30000,DetectionBoxes_Precision/mAP@.75IOU,0.8160604238510132
+helmet_detector\models\helmet_detection_ssd_mnet_v2\eval\events.out.tfevents.1744898534.HTET-THU-AUNG.12848.0.v2,40000,DetectionBoxes_Precision/mAP@.75IOU,0.7663550972938538
