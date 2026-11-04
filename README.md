@@ -76,7 +76,7 @@ These figures represent annotated objects, not the number of images containing e
 4. Generate TensorFlow TFRecord files.
 5. Verify generated records against the original annotations.
 
-The dataset is not included in the Git repository.
+The custom training and validation dataset is not included in the Git repository. The COCO-pretrained SSD MobileNet V2 FPNLite model archive and its extracted model directory are included at the repository root.
 
 ## Training Configuration
 
@@ -483,7 +483,7 @@ $env:PYTHONPATH = "$PWD\helmet_detector;$PWD"
 
 This setting applies to the current PowerShell session.
 
-**Note:** The training dataset and pretrained model assets are not included in the repository. They must be obtained separately before reproducing the full training workflow.
+**Note:** The custom training and validation dataset is not included in the repository. The COCO-pretrained model archive and extracted checkpoint/SavedModel files are included in this repository. The dataset must be obtained separately before reproducing the full training workflow.
 
 ## Running Inference
 
@@ -535,6 +535,7 @@ HelmetDetectionProject/
 │   ├── scripts/
 │   │   ├── benchmark_inference.py
 │   │   ├── benchmark_inference_gpu.py
+│   │   ├── benchmark_inference_v1.py  # Earlier CPU benchmark implementation
 │   │   ├── compare_models.py
 │   │   ├── evaluate_checkpoints.py
 │   │   ├── evaluate_models.py
@@ -551,10 +552,14 @@ HelmetDetectionProject/
 │   │   ├── train_model.py
 │   │   ├── verify_export.py
 │   │   └── visualize_export.py
-│   └── test_output/             # Local inference and benchmark outputs
-├── ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8.tar.gz
+│   └── test_output/             # Tracked sample outputs; generated benchmark reports are local/ignored
+├── ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8.tar.gz  # Included pretrained-model archive
+├── ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8/         # Extracted pretrained model
+│   └── ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8/
+│       ├── checkpoint/
+│       ├── pipeline.config
+│       └── saved_model/
 ├── inspect_model.py
-├── tensorboard_output.py
 ├── requirements.txt
 ├── LICENSE
 ├── README.md
@@ -569,9 +574,9 @@ HelmetDetectionProject/
 - `object_detection/` contains the TensorFlow Object Detection API code.
 - `results/` contains generated training and evaluation visualizations.
 - `scripts/` contains preprocessing, training, evaluation, export, inference, and benchmarking scripts.
-- `test_output/` contains local inference outputs and benchmark reports.
+- `test_output/` contains committed sample inference images and video/GIF outputs. Generated benchmark reports are saved locally and are not committed.
 
-Some directories contain generated or locally maintained files that are excluded from version control.
+The `data/raw/` and `data/processed/` directories are local-only and excluded from version control. Existing sample files under `test_output/` are committed; generated benchmark report directories remain ignored.
 
 ## What I Learned
 
