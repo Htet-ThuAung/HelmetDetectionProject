@@ -12,6 +12,9 @@
 /helmet_detector/models/exportedModel_checkpoint76/
 /helmet_detector/models/exportedModel_checkpoint78/
 
+# Local GPU telemetry
+/gpu_monitor.csv
+
 # TensorBoard event logs
 **/events.out.tfevents.*
 
